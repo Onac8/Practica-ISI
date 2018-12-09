@@ -30,7 +30,7 @@ public class BisiestoTest2
 	@Test
 	public void testForZeroYear()
 	{
-		assertFalse(year.esBisiesto(0));
+		assertTrue(year.esBisiesto(0));
 	}
 
 	//Test para comprobar que año no es bisiesto
