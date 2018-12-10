@@ -23,6 +23,8 @@ public class DescuentoBlackFridayTest2
 	@Test (expected = IllegalArgumentException.class) // Este test decora la anotación @Test con la clase de la excepción esperada.
 	public void testForNegativePrice()
 	{
+		int day = 23;
+		int month = 11;
 		price.PrecioFinal(-1.0);
 	}
 
@@ -31,6 +33,8 @@ public class DescuentoBlackFridayTest2
 	@Test (expected = IllegalArgumentException.class)
 	public void testForZeroPrice()
 	{
+		int day = 23;
+		int month = 11;
 		price.PrecioFinal(0.0);
 	}
 
@@ -39,8 +43,8 @@ public class DescuentoBlackFridayTest2
 	@Test
 	public void testForValidPrice()
 	{
-		price.day = 23;
-		price.month = 11;
+		int day = 23;
+		int month = 11;
 		assertTrue("testForValidPrice_Error", 70.0 == price.PrecioFinal(100.0)); // Se imprimirá este msg si test falla
 	}
 
@@ -49,8 +53,8 @@ public class DescuentoBlackFridayTest2
 	@Test
 	public void testForValidPriceDesc()
 	{
-		price.day = 24;
-		price.month = 11;
+		int day = 24;
+		int month = 11;
 		assertTrue("testForValidPrice_Error", 100.0 == price.PrecioFinal(100.0)); // Se imprimirá este msg si test falla
 	}
 
