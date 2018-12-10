@@ -20,18 +20,20 @@ public class RomanNumeralTest2
 
 	// Test para String nulo
 	// Caminos recorridos: (1,2)
-	@Test (expected = IllegalArgumentException.class)
+	@Test
 	public void testForNullString()
 	{
-		number.convierte("");
+		// number.convierte("");
+		assertTrue("Ese numero no es romano", 0 == number.convierte(""));
 	}
 
 	// Test para String ilegal
 	// Caminos recorridos: (1,3,4,5,14)
-	@Test (expected = IllegalArgumentException.class)
+	@Test
 	public void testForNoRoman()
 	{
-		number.convierte("HJK");
+		// number.convierte("HJK");
+		assertTrue("Ese numero no es romano", 0 == number.convierte("HJK"));
 	}
 
 	// Test para String ilegal (pero parecido a romano)
