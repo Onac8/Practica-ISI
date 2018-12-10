@@ -19,38 +19,38 @@ public class EmbotelladoraTest2
 	}
 
 	//Test con botellas pequenas negativas
-	@Test (expected = IllegalArgumentException.class) // Este test decora la anotación @Test con la clase de la excepción esperada.
+	@Test
 	public void testForNegativePequenas()
 	{
-		embotelladora.calculaBotellasPequenas(-10,10,10);
+		assertTrue("testForNegativePequenas_Error", -1 == embotelladora.calculaBotellasPequenas(-10,10,10));
 	}
 
 	//Test con botellas grandes negativas
-	@Test (expected = IllegalArgumentException.class)
+	@Test
 	public void testForNegativeGrandes()
 	{
-		embotelladora.calculaBotellasPequenas(10,-10,10);
+		assertTrue("testForNegativeGrandes_Error", -1 == embotelladora.calculaBotellasPequenas(10,-10,10));
 	}
 
 	//Test con litros totales < 0
-	@Test (expected = IllegalArgumentException.class)
+	@Test
 	public void testForNegativeTotal()
 	{
-		embotelladora.calculaBotellasPequenas(10,10,-10);
+		assertTrue("testForNegativeTotal_Error", -1 == embotelladora.calculaBotellasPequenas(10,10,-10));
 	}
 
 	//Test con pequenas=grandes=0
-	@Test (expected = IllegalArgumentException.class)
+	@Test
 	public void testForZeroBotellas()
 	{
-		embotelladora.calculaBotellasPequenas(0,0,10);
+		assertTrue("testForZeroBotellas_Error", -1 == embotelladora.calculaBotellasPequenas(0,0,10));
 	}
 
 	//Test con litros totales = 0
-	@Test (expected = IllegalArgumentException.class)
+	@Test
 	public void testForZeroTotal()
 	{
-		embotelladora.calculaBotellasPequenas(1,2,0);
+		assertTrue("testForZeroTotal_Error", 0 == embotelladora.calculaBotellasPequenas(1,2,0));
 	}
 
 
